@@ -2,9 +2,9 @@
   "name": "youtube-downloader",
   "version": "1.0.0",
   "description": "A user-friendly application that allows users to download videos and audios from YouTube and YouTube Music in the best quality possible, with no ads.",
-  "main": "index.js",
+  "main": "src/main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npx electron ."
   },
   "repository": {
     "type": "git",
