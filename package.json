@@ -19,5 +19,8 @@
   "homepage": "https://github.com/diogocarrola/youtube-downloader#readme",
   "dependencies": {
     "ytdl-core": "^4.11.5"
+  },
+  "devDependencies": {
+    "electron": "^36.3.1"
   }
 }
