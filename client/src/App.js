@@ -59,21 +59,24 @@ function App() {
       <p style={{ textAlign: "center", color: "#444" }}>
         Paste a YouTube or YouTube Music URL below and download the best quality video or audio.
       </p>
-      <input
-        type="text"
-        placeholder="Paste YouTube URL"
-        value={url}
-        onChange={(e) => setUrl(e.target.value)}
-        style={{
-          width: "100%",
-          padding: "0.75em",
-          fontSize: "1em",
-          borderRadius: "6px",
-          border: "1px solid #ccc",
-          marginBottom: "1em",
-        }}
-        disabled={downloading}
-      />
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <input
+          type="text"
+          placeholder="Paste YouTube URL"
+          value={url}
+          onChange={(e) => setUrl(e.target.value)}
+          style={{
+            width: "100%",
+            maxWidth: "400px",
+            padding: "0.75em",
+            fontSize: "1em",
+            borderRadius: "6px",
+            border: "1px solid #ccc",
+            marginBottom: "1em",
+          }}
+          disabled={downloading}
+        />
+      </div>
       <div style={{ display: "flex", gap: "1em", justifyContent: "center" }}>
         <button
           onClick={() => handleDownload("video")}
@@ -111,9 +114,32 @@ function App() {
       <div style={{ marginTop: "1.5em", textAlign: "center", minHeight: "2em" }}>
         {status}
       </div>
-      <footer style={{ marginTop: "2em", textAlign: "center", fontSize: "0.9em", color: "#888" }}>
-        <a href="https://github.com/diogocarrola/youtube-downloader" target="_blank" rel="noopener noreferrer">
-          View on GitHub
+      <footer
+        style={{
+          marginTop: "2em",
+          textAlign: "center",
+          fontSize: "1em",
+          color: "#282828",
+          borderTop: "1px solid #e0e0e0",
+          paddingTop: "1em",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center"
+        }}
+      >
+        <span>View source code on&nbsp;</span>
+        <a
+          href="https://github.com/diogocarrola/youtube-downloader"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ display: "inline-flex", alignItems: "center" }}
+          title="GitHub Repository"
+        >
+          <img
+            src={require("./github-mark.svg").default}
+            alt="GitHub Octocat"
+            style={{ height: "24px", verticalAlign: "middle" }}
+          />
         </a>
       </footer>
     </div>
