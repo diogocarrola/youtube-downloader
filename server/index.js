@@ -3,7 +3,9 @@ const ytdl = require('ytdl-core');
 const cors = require('cors');
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: 'https://diogocarrola.github.io'
+}));
 
 app.get('/api/download', async (req, res) => {
   const { url, type } = req.query;
