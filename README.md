@@ -1,49 +1,39 @@
 # YouTube High-Quality Downloader
 
-A user-friendly desktop application to download videos and audios from YouTube and YouTube Music in the best quality possible, with no ads.
+A user-friendly web application to download videos and audios from YouTube and YouTube Music in the best quality possible, with no ads.
 
 ## Features
 
 - Download videos or audio from YouTube and YouTube Music
 - Always selects the best available quality
-- Simple, intuitive graphical interface
-- No ads
+- Simple and intuitive web interface
+- No ads and free to use
 
 ## Getting Started
 
-## Usage
+### Online Usage
 
-1. Paste a YouTube or YouTube Music URL into the input field.
-2. Click "Download Video" or "Download Audio".
-3. The file will be saved in the `downloads` folder.
+1. Visit the [YouTube High-Quality Downloader frontend](https://diogocarrola.github.io/youtube-downloader).
+2. Paste a YouTube or YouTube Music URL into the input field.
+3. Click "Download Video" or "Download Audio".
+4. The file will be downloaded directly to your device.
 
-## Why Electron?
+## How It Works
 
-This project uses [Electron](https://www.electronjs.org/) to provide a modern, cross-platform desktop GUI. Electron lets us combine the power of Node.js (for downloading and file handling) with a responsive web-based interface, making the app easy to use and maintain.
-
----
+- The **frontend** is a React app hosted on GitHub Pages.
+- The **backend** is a Node.js/Express server (using `ytdl-core`) hosted on Render.
+- The React app sends your YouTube URL and download type (video/audio) to the backend.
+- The backend fetches and streams the best quality video or audio file back to your browser for download.
 
 ## For Developers
 
-### Project Structure
-
-```
-/src
-  main.js        # Electron main process (app entry point)
-/src/index.html  # GUI layout
-/src/renderer.js # Renderer process (handles UI logic)
-```
-
 ### Key Dependencies
 
-- [`electron`](https://www.electronjs.org/) — Desktop app framework
+- [`react`](https://react.dev/) — Frontend framework
+- [`gh-pages`](https://www.npmjs.com/package/gh-pages) — Deploy React app to GitHub Pages
+- [`express`](https://expressjs.com/) — Backend server
 - [`ytdl-core`](https://www.npmjs.com/package/ytdl-core) — YouTube video/audio downloader
-
-### How it Works
-
-- The Electron main process (`main.js`) creates a window and loads the GUI (`index.html`).
-- The renderer process (`renderer.js`) handles user input, validates URLs, and uses `ytdl-core` to download the requested video or audio in the best available quality.
-- Downloads are saved to the `downloads` folder.
+- [`cors`](https://www.npmjs.com/package/cors) — Enable cross-origin requests
 
 ## License
 
