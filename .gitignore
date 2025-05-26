@@ -1,2 +1,5 @@
 node_modules/
 downloads/
+client/node_modules/
+client/build/
+server/node_modules/
