@@ -18,9 +18,14 @@ app.get('/api/download', async (req, res) => {
     const ext = type === 'audio' ? 'mp3' : 'mp4';
     res.header('Content-Disposition', `attachment; filename="${title}.${ext}"`);
     ytdl(url, { quality: type === 'audio' ? 'highestaudio' : 'highestvideo' })
+      .on('error', (err) => {
+        console.error('ytdl error:', err);
+        res.status(500).send('ytdl error: ' + err.message);
+      })
       .pipe(res);
   } catch (err) {
-    res.status(500).send('Download failed');
+    console.error('Server error:', err);
+    res.status(500).send('Server error: ' + err.message);
   }
 });
 
