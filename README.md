@@ -13,7 +13,7 @@ A user-friendly web application to download videos and audios from YouTube and Y
 
 ### Online Usage
 
-1. Visit the [YouTube High-Quality Downloader frontend](https://diogocarrola.github.io/youtube-downloader).
+1. Visit the [YouTube High-Quality Downloader](https://diogocarrola.github.io/youtube-downloader).
 2. Paste a YouTube or YouTube Music URL into the input field.
 3. Click "Download Video" or "Download Audio".
 4. The file will be downloaded directly to your device.
