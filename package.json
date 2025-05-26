@@ -1,0 +1,23 @@
+{
+  "name": "youtube-downloader",
+  "version": "1.0.0",
+  "description": "A user-friendly application that allows users to download videos and audios from YouTube and YouTube Music in the best quality possible, with no ads.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diogocarrola/youtube-downloader.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/diogocarrola/youtube-downloader/issues"
+  },
+  "homepage": "https://github.com/diogocarrola/youtube-downloader#readme",
+  "dependencies": {
+    "ytdl-core": "^4.11.5"
+  }
+}
