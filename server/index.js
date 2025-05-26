@@ -16,13 +16,22 @@ app.get('/api/download', async (req, res) => {
     const info = await ytdl.getInfo(url);
     const title = info.videoDetails.title.replace(/[\\/:*?"<>|]/g, '');
     const ext = type === 'audio' ? 'mp3' : 'mp4';
+    const format = type === 'audio' ? 'highestaudio' : 'highestvideo';
+
     res.header('Content-Disposition', `attachment; filename="${title}.${ext}"`);
-    ytdl(url, { quality: type === 'audio' ? 'highestaudio' : 'highestvideo' })
-      .on('error', (err) => {
-        console.error('ytdl error:', err);
+
+    const stream = ytdl(url, { quality: format });
+
+    stream.on('error', (err) => {
+      console.error('ytdl error:', err);
+      if (!res.headersSent) {
         res.status(500).send('ytdl error: ' + err.message);
-      })
-      .pipe(res);
+      } else {
+        res.end();
+      }
+    });
+
+    stream.pipe(res);
   } catch (err) {
     console.error('Server error:', err);
     res.status(500).send('Server error: ' + err.message);
