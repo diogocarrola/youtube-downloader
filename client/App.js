@@ -11,7 +11,7 @@ function App() {
     }
     setStatus("Preparing download...");
     fetch(
-      `http://localhost:4000/api/download?url=${encodeURIComponent(url)}&type=${type}`
+      `https://youtube-downloader-cuxr.onrender.com/api/download?url=${encodeURIComponent(url)}&type=${type}`
     )
       .then((res) => {
         if (!res.ok) throw new Error("Download failed");
