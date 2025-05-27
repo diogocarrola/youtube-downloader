@@ -21,7 +21,7 @@ A user-friendly web application to download videos and audios from YouTube and Y
 ## How It Works
 
 - The **frontend** is a React app hosted on GitHub Pages.
-- The **backend** is a Node.js/Express server (using `ytdl-core`) hosted on Render.
+- The **backend** is a Python FastAPI server (using `yt-dlp`) hosted on Render.
 - The React app sends your YouTube URL and download type (video/audio) to the backend.
 - The backend fetches and streams the best quality video or audio file back to your browser for download.
 
@@ -31,9 +31,9 @@ A user-friendly web application to download videos and audios from YouTube and Y
 
 - [`react`](https://react.dev/) — Frontend framework
 - [`gh-pages`](https://www.npmjs.com/package/gh-pages) — Deploy React app to GitHub Pages
-- [`express`](https://expressjs.com/) — Backend server
-- [`ytdl-core`](https://www.npmjs.com/package/ytdl-core) — YouTube video/audio downloader
-- [`cors`](https://www.npmjs.com/package/cors) — Enable cross-origin requests
+- [`fastapi`](https://fastapi.tiangolo.com/) — Python backend server
+- [`yt-dlp`](https://github.com/yt-dlp/yt-dlp) — YouTube video/audio downloader
+- [`uvicorn`](https://www.uvicorn.org/) — ASGI server for FastAPI
 
 ## License
 
