@@ -57,7 +57,16 @@ function App() {
         YouTube High-Quality Downloader
       </h1>
       <p style={{ textAlign: "center", color: "#444" }}>
-        Paste a YouTube or YouTube Music URL below and download the best quality video or audio.
+        Paste a YouTube or YouTube Music URL below and download the best quality video or audio.<br />
+        <span style={{ color: "#e53935", fontWeight: 500 }}>
+          Only public, unrestricted videos are supported online.<br />
+          For restricted/private/age-gated videos, use <a
+            href="https://github.com/diogocarrola/youtube-downloader#downloading-restrictedprivate-videos-local-tool"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: "#e53935", textDecoration: "underline", fontWeight: 500 }}
+          >this</a>.
+        </span>
       </p>
       <div style={{ display: "flex", justifyContent: "center" }}>
         <input
